@@ -45,26 +45,3 @@ Este es el sitio web oficial de Alexandra Palacios, logopeda especialista en ter
 | `npm run build`   | Construye el sitio para producción en `./dist/` |
 | `npm run preview` | Vista previa del build local                |
 | `npm run check`   | Verifica el proyecto en busca de errores    |
-
-## 🎯 SEO Score Esperado
-
-Con estas optimizaciones, el sitio debería lograr:
-- **SEO Score**: 9/10 (vs 4/10 original)
-- **Performance**: 95+ en Lighthouse
-- **Accesibilidad**: 100 en Lighthouse
-- **Best Practices**: 100 en Lighthouse
-
-## 🌐 Despliegue
-
-### Netlify (Recomendado)
-1. Conecta tu repositorio a Netlify
-2. Comando de build: `npm run build`
-3. Directorio de publicación: `dist`
-
-### Vercel
-1. Conecta tu repositorio a Vercel
-2. El preset de Astro se detecta automáticamente
-
----
-
-Desarrollado con ❤️ para mejorar la comunicación en Segovia
