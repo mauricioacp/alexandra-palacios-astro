@@ -1,0 +1,111 @@
+---
+import { Heart, Phone, Mail, MapPin } from 'lucide-astro';
+import WhatsApp from './WhatsAppIcon.astro';
+---
+
+<footer class="bg-gray-900 text-white py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Brand -->
+      <div class="space-y-4">
+        <div class="flex items-center space-x-2">
+          <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
+            <span class="text-white font-bold text-lg">AP</span>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold">Alexandra Palacios</h3>
+            <p class="text-purple-400">Logopeda Especialista</p>
+          </div>
+        </div>
+        <p class="text-gray-400 leading-relaxed">
+          Más de 17 años transformando la comunicación de niños y adultos en Segovia con terapia miofuncional especializada.
+        </p>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Servicios</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li>Deglución Infantil</li>
+          <li>Disfagia Adulta</li>
+          <li>Articulación y Fonética</li>
+          <li>Entrenamiento Vocal</li>
+          <li>Terapia Miofuncional</li>
+          <li>Rehabilitación Facial</li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Contacto</h4>
+        <div class="space-y-3 text-gray-400">
+          <div class="flex items-center space-x-2">
+            <Phone class="w-4 h-4" />
+            <a href="tel:614417513" class="hover:text-purple-400 transition-colors">
+              614 41 75 13
+            </a>
+          </div>
+          <div class="flex items-center space-x-2">
+            <Mail class="w-4 h-4" />
+            <a href="mailto:alexandrapz.logopeda@gmail.com" class="hover:text-purple-400 transition-colors">
+              alexandrapz.logopeda@gmail.com
+            </a>
+          </div>
+          <div class="flex items-start space-x-2">
+            <MapPin class="w-4 h-4 mt-0.5" />
+            <span>Clínica Dra. Díaz Sastre, Segovia</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hours -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Horarios</h4>
+        <div class="space-y-2 text-gray-400">
+          <div>
+            <span class="font-medium">Lunes - Viernes</span>
+            <br />
+            <span>9:00 - 19:00</span>
+          </div>
+          <div>
+            <span class="font-medium">Sábados</span>
+            <br />
+            <span>9:00 - 14:00</span>
+          </div>
+          <div>
+            <span class="font-medium">Domingos</span>
+            <br />
+            <span>Cerrado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 mt-12 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <div class="flex items-center space-x-2 text-gray-400">
+          <span>© 2024 Alexandra Palacios. Todos los derechos reservados.</span>
+        </div>
+        
+        <div class="flex items-center space-x-2 text-gray-400">
+          <span>Hecho con</span>
+          <Heart class="w-4 h-4 text-red-500 fill-current" />
+          <span>en Segovia</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+      <a 
+        href="https://wa.me/34614417513?text=Hola%20Alexandra,%20me%20gustaría%20reservar%20una%20consulta"
+        target="_blank" 
+        rel="noopener noreferrer"
+        aria-label="Contactar por WhatsApp"
+        class="bg-green-500 hover:bg-green-600 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+      >
+        <WhatsApp class="w-8 h-8 text-white" />
+      </a>
+    </div>
+  </div>
+</footer>

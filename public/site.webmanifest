@@ -1,0 +1,18 @@
+{
+  "name": "Alexandra Palacios - Logopeda Especialista",
+  "short_name": "Alexandra Palacios",
+  "description": "Logopeda especialista en terapia miofuncional y rehabilitación del habla en Segovia",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#9333ea",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "lang": "es",
+  "scope": "/"
+}

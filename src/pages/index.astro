@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Services from '../components/Services.astro';
+import Pricing from '../components/Pricing.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "Logopeda Especialista en Segovia | Terapia Miofuncional - Alexandra Palacios";
+const description = "Logopeda especialista con +17 años de experiencia en Segovia. Terapia miofuncional, deglución infantil, disfagia adulta y rehabilitación del habla. Consulta en Clínica Dra. Díaz Sastre.";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <Hero />
+  <About />
+  <Services />
+  <Pricing />
+  <Testimonials />
+  <Contact />
+  <Footer />
+</Layout>

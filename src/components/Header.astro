@@ -1,0 +1,191 @@
+---
+import { Menu, X, Phone } from 'lucide-astro';
+---
+
+<header 
+  id="header" 
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm"
+  data-header
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
+          <span class="text-white font-bold text-lg">AP</span>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold text-gray-900">Alexandra Palacios</h1>
+          <p class="text-sm text-purple-600">Logopeda Especialista</p>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <button data-scroll-to="inicio" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+          Inicio
+        </button>
+        <button data-scroll-to="sobre-mi" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+          Sobre Mí
+        </button>
+        <button data-scroll-to="servicios" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+          Servicios
+        </button>
+        <button data-scroll-to="precios" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+          Precios
+        </button>
+        <button data-scroll-to="contacto" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+          Contacto
+        </button>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="tel:614417513" class="flex items-center space-x-2 text-purple-600 hover:text-purple-700 transition-colors">
+          <Phone class="w-4 h-4" />
+          <span class="font-medium">614 41 75 13</span>
+        </a>
+        <a 
+          href="https://wa.me/34614417513?text=Hola%20Alexandra,%20me%20gustaría%20reservar%20una%20consulta" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full hover:from-purple-700 hover:to-blue-700 transition-all duration-300 font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+        >
+          Reservar Consulta
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button 
+        data-mobile-menu-toggle
+        class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+      >
+        <Menu class="w-6 h-6 menu-icon" />
+        <X class="w-6 h-6 close-icon hidden" />
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div 
+      data-mobile-menu
+      class="md:hidden py-4 border-t border-gray-200 hidden"
+    >
+      <nav class="flex flex-col space-y-4">
+        <button data-scroll-to="inicio" class="text-left text-gray-700 hover:text-purple-600 transition-colors font-medium">
+          Inicio
+        </button>
+        <button data-scroll-to="sobre-mi" class="text-left text-gray-700 hover:text-purple-600 transition-colors font-medium">
+          Sobre Mí
+        </button>
+        <button data-scroll-to="servicios" class="text-left text-gray-700 hover:text-purple-600 transition-colors font-medium">
+          Servicios
+        </button>
+        <button data-scroll-to="precios" class="text-left text-gray-700 hover:text-purple-600 transition-colors font-medium">
+          Precios
+        </button>
+        <button data-scroll-to="contacto" class="text-left text-gray-700 hover:text-purple-600 transition-colors font-medium">
+          Contacto
+        </button>
+        <div class="pt-4 border-t border-gray-200">
+          <a href="tel:614417513" class="flex items-center space-x-2 text-purple-600 hover:text-purple-700 transition-colors mb-3">
+            <Phone class="w-4 h-4" />
+            <span class="font-medium">614 41 75 13</span>
+          </a>
+          <a 
+            href="https://wa.me/34614417513?text=Hola%20Alexandra,%20me%20gustaría%20reservar%20una%20consulta" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="block w-full text-center bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-full hover:from-purple-700 hover:to-blue-700 transition-all duration-300 font-medium"
+          >
+            Reservar Consulta
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Header scroll effect
+  let header: HTMLElement | null = null;
+  let mobileMenuToggle: HTMLElement | null = null;
+  let mobileMenu: HTMLElement | null = null;
+  let menuIcon: HTMLElement | null = null;
+  let closeIcon: HTMLElement | null = null;
+  let isMenuOpen = false;
+
+  function initializeHeader() {
+    header = document.querySelector('[data-header]');
+    mobileMenuToggle = document.querySelector('[data-mobile-menu-toggle]');
+    mobileMenu = document.querySelector('[data-mobile-menu]');
+    menuIcon = document.querySelector('.menu-icon');
+    closeIcon = document.querySelector('.close-icon');
+
+    if (!header || !mobileMenuToggle || !mobileMenu || !menuIcon || !closeIcon) return;
+
+    // Scroll effect
+    function handleScroll() {
+      if (!header) return;
+      const isScrolled = window.scrollY > 50;
+      header.className = isScrolled 
+        ? 'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-lg'
+        : 'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm';
+    }
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      if (!mobileMenu || !menuIcon || !closeIcon) return;
+      isMenuOpen = !isMenuOpen;
+      
+      if (isMenuOpen) {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      } else {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    }
+
+    // Smooth scroll function
+    function scrollToSection(sectionId: string) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        // Close mobile menu if open
+        if (isMenuOpen) {
+          toggleMobileMenu();
+        }
+      }
+    }
+
+    // Event listeners
+    window.addEventListener('scroll', handleScroll);
+    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+
+    // Add scroll listeners to all scroll buttons
+    const scrollButtons = document.querySelectorAll('[data-scroll-to]');
+    scrollButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        const target = (e.currentTarget as HTMLElement).getAttribute('data-scroll-to');
+        if (target) {
+          scrollToSection(target);
+        }
+      });
+    });
+
+    // Initial scroll check
+    handleScroll();
+  }
+
+  // Initialize on DOM content loaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeHeader);
+  } else {
+    initializeHeader();
+  }
+
+  // Re-initialize on astro page navigation
+  document.addEventListener('astro:page-load', initializeHeader);
+</script>

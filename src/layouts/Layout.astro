@@ -1,0 +1,117 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  noIndex?: boolean;
+}
+
+const { title, description, image = '/5-scaled.jpg', noIndex = false } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="logopeda Segovia, terapia miofuncional, rehabilitación habla, deglución infantil, disfagia adulta, entrenamiento vocal, Alexandra Palacios" />
+    <meta name="author" content="Alexandra Palacios" />
+    <meta name="language" content="Spanish" />
+    <meta name="geo.region" content="ES-SG" />
+    <meta name="geo.placename" content="Segovia" />
+    <meta name="ICBM" content="40.9429, -4.1088" />
+    {noIndex && <meta name="robots" content="noindex, nofollow" />}
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta property="og:site_name" content="Alexandra Palacios - Logopeda Especialista" />
+    <meta property="og:locale" content="es_ES" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.site)} />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalBusiness",
+        "name": "Alexandra Palacios - Logopeda Especialista",
+        "description": "Logopeda especialista en terapia miofuncional y rehabilitación del habla en Segovia. Más de 17 años de experiencia clínica.",
+        "url": "https://alexandrapalacios-logopeda.com",
+        "logo": "https://alexandrapalacios-logopeda.com/5-scaled.jpg",
+        "image": "https://alexandrapalacios-logopeda.com/5-scaled.jpg",
+        "telephone": "+34614417513",
+        "email": "alexandrapz.logopeda@gmail.com",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Segovia",
+          "addressRegion": "Castilla y León",
+          "addressCountry": "ES"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "addressCountry": "ES"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "19:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "09:00",
+            "closes": "14:00"
+          }
+        ],
+        "serviceType": [
+          "Logopedia",
+          "Terapia Miofuncional",
+          "Rehabilitación del Habla",
+          "Deglución Infantil",
+          "Disfagia Adulta",
+          "Entrenamiento Vocal",
+          "Rehabilitación Facial"
+        ],
+        "areaServed": {
+          "@type": "Place",
+          "name": "Segovia, España"
+        },
+        "sameAs": [
+          "https://wa.me/34614417513"
+        ]
+      }
+    </script>
+
+  </head>
+  <body class="min-h-screen bg-white">
+    <slot />
+  </body>
+</html>
