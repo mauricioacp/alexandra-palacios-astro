@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Debug: List the contents of dist to verify build output
-RUN ls -la /app/dist/
+RUN ls -la /app/dist/ && echo "Build completed successfully"
 
 FROM nginx:alpine AS runtime
 
