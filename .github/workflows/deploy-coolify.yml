@@ -1,0 +1,73 @@
+name: Deploy to Coolify
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to Coolify
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Deploy to Coolify
+        run: |
+          echo "🚀 Deploying to Coolify via API..."
+          
+          # Configuration
+          UUID="${{ secrets.COOLIFY_UUID || 'f8gwg00csss8k00ogkcosco4' }}"
+          FORCE="${{ github.event_name == 'workflow_dispatch' && 'true' || 'false' }}"
+          
+          # Call Coolify API
+          response=$(curl -s -w "\n%{http_code}" -X GET \
+            -H "Authorization: Bearer ${{ secrets.COOLIFY_API_TOKEN }}" \
+            -H "Accept: application/json" \
+            "https://app.coolify.io/api/v1/deploy?uuid=${UUID}&force=${FORCE}")
+          
+          http_code=$(echo "$response" | tail -n1)
+          body=$(echo "$response" | sed '$d')
+          
+          # Check response
+          if [ "$http_code" -eq 200 ] || [ "$http_code" -eq 201 ]; then
+            echo "✅ Deployment triggered successfully!"
+            echo "Response: $body"
+            
+            # Extract deployment UUID if available
+            deployment_uuid=$(echo "$body" | grep -oP '"deployment_uuid":\s*"[^"]+' | cut -d'"' -f4 || true)
+            if [ -n "$deployment_uuid" ]; then
+              echo "🔗 Deployment UUID: $deployment_uuid"
+            fi
+          else
+            echo "❌ Deployment failed with status code: $http_code"
+            echo "Response: $body"
+            
+            if [ "$http_code" -eq 401 ]; then
+              echo "⚠️  Authentication failed. Please check your COOLIFY_API_TOKEN secret."
+            elif [ "$http_code" -eq 404 ]; then
+              echo "⚠️  Resource not found. Please check your UUID."
+            fi
+            
+            exit 1
+          fi
+      
+      - name: Deployment Summary
+        if: always()
+        run: |
+          echo "### 🚀 Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Branch:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Commit:** \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Commit message:** ${{ github.event.head_commit.message }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Triggered by:** ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Workflow:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "- **Force rebuild:** ✅ Enabled" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "- **Force rebuild:** ❌ Disabled" >> $GITHUB_STEP_SUMMARY
+          fi
