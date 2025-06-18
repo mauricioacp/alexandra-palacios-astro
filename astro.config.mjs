@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  site: 'https://alexandrapalacios-logopeda.com',
+  site: 'https://alexandrapalacios.com',
   integrations: [
     sitemap()
   ],

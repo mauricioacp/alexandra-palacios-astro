@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 export interface Props {
   title: string;
@@ -8,7 +8,12 @@ export interface Props {
   noIndex?: boolean;
 }
 
-const { title, description, image = '/5-scaled.jpg', noIndex = false } = Astro.props;
+const {
+  title,
+  description,
+  image = "/5-scaled.jpg",
+  noIndex = false,
+} = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -19,41 +24,47 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta name="generator" content={Astro.generator} />
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
-    
+
     <!-- Primary Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <meta name="keywords" content="logopeda Segovia, terapia miofuncional, rehabilitación habla, deglución infantil, disfagia adulta, entrenamiento vocal, Alexandra Palacios" />
+    <meta
+      name="keywords"
+      content="logopeda Segovia, terapia miofuncional, rehabilitación habla, deglución infantil, disfagia adulta, entrenamiento vocal, Alexandra Palacios"
+    />
     <meta name="author" content="Alexandra Palacios" />
     <meta name="language" content="Spanish" />
     <meta name="geo.region" content="ES-SG" />
     <meta name="geo.placename" content="Segovia" />
     <meta name="ICBM" content="40.9429, -4.1088" />
     {noIndex && <meta name="robots" content="noindex, nofollow" />}
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, Astro.site)} />
-    <meta property="og:site_name" content="Alexandra Palacios - Logopeda Especialista" />
+    <meta
+      property="og:site_name"
+      content="Alexandra Palacios - Logopeda Especialista"
+    />
     <meta property="og:locale" content="es_ES" />
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.site)} />
-    
+
     <!-- Structured Data -->
     <script type="application/ld+json" is:inline>
       {
@@ -80,7 +91,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
             "opens": "09:00",
             "closes": "19:00"
           },
@@ -104,12 +121,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           "@type": "Place",
           "name": "Segovia, España"
         },
-        "sameAs": [
-          "https://wa.me/34614417513"
-        ]
+        "sameAs": ["https://wa.me/34614417513"]
       }
     </script>
-
+    <script
+      defer
+      src="https://umami.cappady.com/script.js"
+      data-website-id="a056db17-c4fe-4c76-8140-5d7a64defd48"></script>
   </head>
   <body class="min-h-screen bg-white">
     <slot />
