@@ -1,95 +1,189 @@
 ---
-import { Baby, Users, Mic, Brain, Utensils, Smile } from 'lucide-astro';
+import { Mic, Brain, Utensils, Smile, ChevronDown, ChevronUp } from 'lucide-astro';
 
-const services = [
-  {
-    icon: Baby,
-    title: "Deglución Infantil",
-    description: "Tratamiento especializado para problemas de deglución en niños, mejorando la alimentación y el desarrollo oral.",
-    features: ["Evaluación completa", "Ejercicios miofuncionales", "Seguimiento familiar", "Técnicas lúdicas"]
-  },
-  {
-    icon: Users,
-    title: "Disfagia Adulta",
-    description: "Rehabilitación de la deglución en adultos, especialmente tras accidentes cerebrovasculares o enfermedades neurológicas.",
-    features: ["Valoración neurológica", "Adaptación dietética", "Ejercicios específicos", "Seguimiento médico"]
-  },
-  {
-    icon: Mic,
-    title: "Articulación y Fonética",
-    description: "Corrección de problemas de pronunciación y articulación para mejorar la claridad del habla.",
-    features: ["Análisis fonético", "Ejercicios articulatorios", "Práctica funcional", "Generalización"]
-  },
-  {
-    icon: Brain,
-    title: "Entrenamiento Vocal",
-    description: "Terapia vocal para profesionales de la voz y personas con alteraciones vocales.",
-    features: ["Higiene vocal", "Técnica respiratoria", "Ejercicios vocales", "Prevención lesiones"]
-  },
+interface Subcategory {
+  title: string;
+  description: string;
+  features: string[];
+}
+
+interface Therapy {
+  icon: any;
+  title: string;
+  description: string;
+  features?: string[];
+  subcategories?: Subcategory[];
+}
+
+const therapies: Therapy[] = [
   {
     icon: Utensils,
     title: "Terapia Miofuncional",
-    description: "Especialidad en reeducación de la musculatura orofacial para mejorar funciones como masticación y deglución.",
-    features: ["Evaluación muscular", "Ejercicios específicos", "Corrección postural", "Resultados duraderos"]
+    description: "Especialidad en la reeducación de la musculatura orofacial para mejorar funciones como masticación y deglución.",
+    subcategories: [
+      {
+        title: "Disfagias en Adultos",
+        description: "Terapia específica en la deglución de adultos especialmente tras accidentes cerebrovasculares, enfermedades oncológicas y/o neurológicas.",
+        features: ["Valoración inicial de la deglución", "Adaptación de dieta", "Ejercicios específicos y adaptados"]
+      },
+      {
+        title: "Deglución Infantil y Aversión de Alimentos",
+        description: "Especialidad en niños con mala colocación lingual al tragar y en reposo, mejorando la alimentación y el desarrollo oral. Engloba diferentes patologías.",
+        features: ["Respiradores orales", "Deglución atípica (malformaciones dentarias)", "Fisura labio-palatina", "Aversión a diferentes alimentos. Aprendizaje de nuevos hábitos para comer todo tipo de alimentos y disfrutarlos", "Evaluación completa", "Adaptación de dieta (si fuese necesario)", "Ejercicios específicos y adaptados", "Técnicas lúdicas"]
+      }
+    ]
+  },
+  {
+    icon: Mic,
+    title: "Terapia Vocal",
+    description: "Entrenamiento diseñado para dar herramientas aplicadas en el día a día para profesionales de la voz o personas con alteraciones vocales causadas por una lesión o por problemas funcionales.",
+    features: []
+  },
+  {
+    icon: Mic,
+    title: "Terapia en la Articulación",
+    description: "Tratamientos especializados para mejorar la articulación y el habla.",
+    subcategories: [
+      {
+        title: "Tratamiento Postquirúrgico",
+        description: "Tratamiento de la adquisición e integración de los fonemas /l/-/rr/-/s/ por impedimento del frenillo de la lengua.",
+        features: []
+      },
+      {
+        title: "Terapia de Articulación, Locución y Prosodia",
+        description: "Si eres locutor/a, profesor/a, actor/actriz, o trabajas durante horas con tu voz, esta terapia te ayudará a mejorar la dicción, prosodia y la proyección vocal.",
+        features: []
+      }
+    ]
   },
   {
     icon: Smile,
-    title: "Rehabilitación Facial",
-    description: "Tratamiento de parálisis facial y alteraciones de la musculatura facial.",
-    features: ["Estimulación muscular", "Ejercicios faciales", "Recuperación funcional", "Apoyo emocional"]
+    title: "Terapia en Parálisis Facial",
+    description: "Tratamiento para la recuperación de la movilidad y funcionalidad de la musculatura orofacial.",
+    features: []
+  },
+  {
+    icon: Brain,
+    title: "Terapia Neurológica",
+    description: "Tratamiento de recuperación del lenguaje y articulación para personas que presenten afasia o disartria tras ictus y/o enfermedad neurológica.",
+    features: ["Evaluación inicial", "Entrenamiento del lenguaje", "Estimulación oral", "Opción de grupos reducidos"]
   }
 ];
 ---
 
-<section id="servicios" class="py-20 bg-gray-50">
+<section id="terapias" class="py-20 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-        Servicios Especializados
+        Terapias Especializadas
       </h2>
       <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        Ofrezco una amplia gama de servicios de logopedia adaptados a las necesidades específicas de cada paciente, desde niños hasta adultos.
+        Ofrezco una amplia terapia logopédica adaptada a las necesidades de cada paciente, en adultos y niños.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {services.map((service) => {
-        const IconComponent = service.icon;
+    <div class="space-y-8">
+      {therapies.map((therapy, index) => {
+        const IconComponent = therapy.icon;
+        const hasSubcategories = therapy.subcategories && therapy.subcategories.length > 0;
+        const therapyId = `therapy-${index}`;
+        
         return (
-          <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-            <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-100 to-blue-100 rounded-2xl mb-6">
-              <IconComponent class="w-8 h-8 text-purple-600" />
-            </div>
-            
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">
-              {service.title}
-            </h3>
-            
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              {service.description}
-            </p>
-            
-            <ul class="space-y-2">
-              {service.features.map((feature) => (
-                <li class="flex items-center space-x-2 text-sm text-gray-600">
-                  <div class="w-1.5 h-1.5 bg-purple-600 rounded-full"></div>
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-            
-            <div class="mt-6 pt-6 border-t border-gray-100">
-              <a 
-                href={`https://wa.me/34614417513?text=Hola%20Alexandra,%20me%20interesa%20el%20servicio%20de%20${encodeURIComponent(service.title)}`}
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium transition-colors"
-              >
-                Consultar servicio
-                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div class="p-8">
+              <div class="flex items-start gap-6">
+                <div class="flex-shrink-0">
+                  <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-100 to-blue-100 rounded-2xl">
+                    <IconComponent class="w-8 h-8 text-purple-600" />
+                  </div>
+                </div>
+                
+                <div class="flex-grow">
+                  <div class="flex items-center justify-between mb-3">
+                    <h3 class="text-2xl font-semibold text-gray-900">
+                      {therapy.title}
+                    </h3>
+                    {hasSubcategories && (
+                      <button
+                        data-toggle-therapy={therapyId}
+                        class="flex items-center gap-2 text-purple-600 hover:text-purple-700 transition-colors"
+                        aria-expanded="false"
+                      >
+                        <span class="text-sm font-medium">Ver especialidades</span>
+                        <ChevronDown class="w-5 h-5 chevron-down" />
+                        <ChevronUp class="w-5 h-5 chevron-up hidden" />
+                      </button>
+                    )}
+                  </div>
+                  
+                  <p class="text-gray-600 mb-6 leading-relaxed">
+                    {therapy.description}
+                  </p>
+                  
+                  {therapy.features && (
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-6">
+                      {therapy.features.map((feature) => (
+                        <li class="flex items-center space-x-2 text-sm text-gray-600">
+                          <div class="w-1.5 h-1.5 bg-purple-600 rounded-full flex-shrink-0"></div>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  
+                  {!hasSubcategories && (
+                    <div class="mt-6">
+                      <a 
+                        href={`https://wa.me/34614417513?text=Hola%20Alexandra,%20me%20interesa%20la%20${encodeURIComponent(therapy.title)}`}
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium transition-colors"
+                      >
+                        Consultar terapia
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </a>
+                    </div>
+                  )}
+                </div>
+              </div>
+              
+              {hasSubcategories && (
+                <div data-therapy-content={therapyId} class="hidden mt-8 pt-8 border-t border-gray-200">
+                  <div class="grid md:grid-cols-2 gap-6">
+                    {therapy.subcategories?.map((subcategory) => (
+                      <div class="bg-gray-50 rounded-xl p-6">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-3">
+                          {subcategory.title}
+                        </h4>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                          {subcategory.description}
+                        </p>
+                        <ul class="space-y-2 mb-4">
+                          {subcategory.features.map((feature) => (
+                            <li class="flex items-center space-x-2 text-sm text-gray-600">
+                              <div class="w-1.5 h-1.5 bg-purple-600 rounded-full flex-shrink-0"></div>
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <a 
+                          href={`https://wa.me/34614417513?text=Hola%20Alexandra,%20me%20interesa%20la%20${encodeURIComponent(therapy.title)}%20-%20${encodeURIComponent(subcategory.title)}`}
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          class="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium transition-colors text-sm"
+                        >
+                          Consultar
+                          <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         );
@@ -97,3 +191,45 @@ const services = [
     </div>
   </div>
 </section>
+
+<script>
+  function initializeTherapyToggles() {
+    const toggleButtons = document.querySelectorAll('[data-toggle-therapy]');
+    
+    toggleButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const therapyId = button.getAttribute('data-toggle-therapy');
+        const content = document.querySelector(`[data-therapy-content="${therapyId}"]`);
+        const chevronDown = button.querySelector('.chevron-down');
+        const chevronUp = button.querySelector('.chevron-up');
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        
+        if (content) {
+          if (isExpanded) {
+            content.classList.add('hidden');
+            chevronDown?.classList.remove('hidden');
+            chevronUp?.classList.add('hidden');
+            button.setAttribute('aria-expanded', 'false');
+            button.querySelector('span')!.textContent = 'Ver especialidades';
+          } else {
+            content.classList.remove('hidden');
+            chevronDown?.classList.add('hidden');
+            chevronUp?.classList.remove('hidden');
+            button.setAttribute('aria-expanded', 'true');
+            button.querySelector('span')!.textContent = 'Ocultar especialidades';
+          }
+        }
+      });
+    });
+  }
+  
+  // Initialize on DOM content loaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTherapyToggles);
+  } else {
+    initializeTherapyToggles();
+  }
+  
+  // Re-initialize on astro page navigation
+  document.addEventListener('astro:page-load', initializeTherapyToggles);
+</script>
