@@ -222,14 +222,12 @@ const therapies: Therapy[] = [
       });
     });
   }
-  
-  // Initialize on DOM content loaded
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializeTherapyToggles);
   } else {
     initializeTherapyToggles();
   }
-  
-  // Re-initialize on astro page navigation
+
   document.addEventListener('astro:page-load', initializeTherapyToggles);
 </script>

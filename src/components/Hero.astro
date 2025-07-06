@@ -106,13 +106,11 @@ import heroImage from '../assets/hero-image.jpg';
     });
   }
 
-  // Initialize on DOM content loaded
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializeHeroButtons);
   } else {
     initializeHeroButtons();
   }
-
   // Re-initialize on astro page navigation
   document.addEventListener('astro:page-load', initializeHeroButtons);
 </script>
