@@ -1,0 +1,150 @@
+---
+import { faqData, faqCategories, type FAQItem } from '@/data/faq';
+import { Plus } from 'lucide-astro';
+
+interface Props {
+  limit?: number;
+  category?: FAQItem['category'];
+}
+
+const { limit, category } = Astro.props;
+
+let faqs = category ? faqData.filter(faq => faq.category === category) : faqData;
+
+if (limit) {
+  faqs = faqs.slice(0, limit);
+}
+
+const groupedFaqs = faqs.reduce((acc, faq) => {
+  if (!acc[faq.category]) {
+    acc[faq.category] = [];
+  }
+  acc[faq.category].push(faq);
+  return acc;
+}, {} as Record<FAQItem['category'], FAQItem[]>);
+---
+
+<section class="py-16 px-4" aria-labelledby="faq-title">
+  <div class="container mx-auto max-w-4xl">
+    {!Astro.props.limit && (
+      <h2 id="faq-title" class="text-3xl font-bold text-gray-900 mb-12 text-center sr-only">
+        Preguntas Frecuentes
+      </h2>
+    )}
+    
+    <div class="space-y-8">
+      {Object.entries(groupedFaqs).map(([categoryKey, categoryFaqs]) => (
+        <div>
+          <h3 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600 mb-6">
+            {faqCategories[categoryKey as keyof typeof faqCategories]}
+          </h3>
+          
+          <div class="space-y-4">
+            {categoryFaqs.map((faq, index) => (
+              <details 
+                class="faq-item bg-white border border-purple-100 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden group"
+                data-faq-index={`${categoryKey}-${index}`}
+              >
+                <summary class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between hover:bg-purple-50/50 transition-colors duration-200 cursor-pointer list-none focus:outline-none ">
+                  <span class="font-semibold text-gray-900 pr-4 text-lg">{faq.question}</span>
+                  <Plus class="faq-icon w-6 h-6 text-purple-600 transition-transform duration-300 flex-shrink-0" aria-hidden="true" />
+                </summary>
+                
+                <div class="faq-content px-6 pb-5 text-gray-700 leading-relaxed">
+                  <p>{faq.answer}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Remove default marker */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  summary {
+    list-style: none;
+  }
+  
+  /* Icon rotation */
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+  
+  /* Border accent */
+  .faq-item {
+    border-left: 3px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+  
+  .faq-item[open] {
+    border-left-color: #9333ea;
+  }
+  
+  /* Content animation */
+  .faq-content {
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Remove focus outline on click, keep it for keyboard navigation */
+  summary:focus-visible {
+    outline: 2px solid #9333ea;
+    outline-offset: 2px;
+    border-radius: 0.75rem;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .faq-icon {
+      transition: none;
+    }
+    .faq-content {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  function initializeFAQ() {
+    const faqItems = document.querySelectorAll('.faq-item');
+   
+    faqItems.forEach(item => {
+      item.addEventListener('toggle', (e) => {
+        if ((e.target as HTMLDetailsElement).open) {
+          const parent = item.parentElement;
+          if (parent) {
+            parent.querySelectorAll('.faq-item').forEach(otherItem => {
+              if (otherItem !== item && otherItem instanceof HTMLDetailsElement) {
+                otherItem.open = false;
+              }
+            });
+          }
+        }
+      });
+    });
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeFAQ);
+  } else {
+    initializeFAQ();
+  }
+  
+  document.addEventListener('astro:page-load', initializeFAQ);
+</script>

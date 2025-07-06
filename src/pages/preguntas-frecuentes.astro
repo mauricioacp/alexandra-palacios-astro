@@ -1,0 +1,76 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/HeaderWithNavigation.astro';
+import Footer from '@/components/Footer.astro';
+import FAQ from '@/components/FAQ.astro';
+import { MessageCircleQuestion } from 'lucide-astro';
+import { faqData } from '@/data/faq';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<Layout 
+  title="Preguntas Frecuentes - Alexandra Palacios Logopeda"
+  description="Encuentra respuestas a las preguntas más comunes sobre logopedia, tratamientos, sesiones y más. Alexandra Palacios, logopeda en Madrid y Segovia."
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
+  
+  <Header />
+  
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-purple-50 via-white to-blue-50 py-24 px-4 overflow-hidden">
+      <!-- Background decoration -->
+      <div class="absolute inset-0 -z-10">
+        <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+        <div class="absolute top-0 -right-4 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob [animation-delay:2s]"></div>
+        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob [animation-delay:4s]"></div>
+      </div>
+      
+      <div class="container mx-auto max-w-4xl text-center relative">
+        <h1 class="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-6">
+          Preguntas Frecuentes
+        </h1>
+        <p class="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
+          Encuentra respuestas a las dudas más comunes sobre nuestros servicios
+        </p>
+        
+        <!-- CTA for more questions -->
+        <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-6 inline-flex items-center gap-4 border border-purple-100">
+          <MessageCircleQuestion class="w-8 h-8 text-purple-600" />
+          <div>
+            <p class="text-gray-700">
+              ¿No encuentras tu pregunta? 
+            </p>
+            <div>
+            <a 
+            href="https://wa.me/34614417513?text=Hola%20Alexandra,%20me%20gustaría%20reservar%20mi%20primera%20cita"
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="text-purple-600 font-semibold hover:text-purple-700 underline underline-offset-2 transition-colors"
+            >
+            Contáctame por WhatsApp
+            </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- FAQ Component -->
+    <FAQ />
+  </main>
+  
+  <Footer />
+</Layout>
