@@ -17,8 +17,8 @@ const pricingPlans = [
     popular: false
   },
   {
-    name: "Primera Evaluación Disfagia",
-    price: "50",
+    name: "Evaluación de disfagia/deglución",
+    price: "60",
     description: "Valoración inicial especializada",
     features: [
       "Evaluación específica",
@@ -82,21 +82,21 @@ const pricingPlans = [
               </div>
             </div>
           )}
-          
+
           <div class="p-8">
             <h3 class="text-xl font-semibold text-gray-900 mb-2">
               {plan.name}
             </h3>
-            
+
             <div class="mb-4">
               <span class="text-4xl font-bold text-gray-900">{plan.price}</span>
               <span class="text-gray-600">€</span>
             </div>
-            
+
             <p class="text-gray-600 mb-6">
               {plan.description}
             </p>
-            
+
             <ul class="space-y-3 mb-8">
               {plan.features.map((feature) => (
                 <li class="flex items-start space-x-3">
@@ -105,14 +105,14 @@ const pricingPlans = [
                 </li>
               ))}
             </ul>
-            
-            <a 
+
+            <a
               href={`https://wa.me/34614417513?text=Hola%20Alexandra,%20me%20interesa%20el%20servicio%20de%20${encodeURIComponent(plan.name)}`}
-              target="_blank" 
+              target="_blank"
               rel="noopener noreferrer"
               class={`block w-full text-center py-3 px-6 rounded-full font-medium transition-all duration-300 ${
-                plan.popular 
-                  ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700 shadow-lg hover:shadow-xl' 
+                plan.popular
+                  ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700 shadow-lg hover:shadow-xl'
                   : 'border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white'
               }`}
             >
@@ -128,7 +128,7 @@ const pricingPlans = [
       <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center">
         Normas del Tratamiento
       </h3>
-      
+
       <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         <div class="space-y-4">
           <div class="flex items-start space-x-3">
@@ -142,7 +142,7 @@ const pricingPlans = [
               </p>
             </div>
           </div>
-          
+
           <div class="flex items-start space-x-3">
             <div class="w-8 h-8 bg-purple-200 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
               <span class="text-purple-700 font-semibold">2</span>
@@ -155,7 +155,7 @@ const pricingPlans = [
             </div>
           </div>
         </div>
-        
+
         <div class="space-y-4">
           <div class="flex items-start space-x-3">
             <div class="w-8 h-8 bg-blue-200 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -168,25 +168,25 @@ const pricingPlans = [
               </p>
             </div>
           </div>
-          
+
         </div>
       </div>
-      
+
       <div class="mt-8 text-center">
         <p class="text-gray-700 mb-6 font-medium">
           ¿Listo para dar el primer paso?
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a 
+          <a
             href="https://wa.me/34614417513?text=Hola%20Alexandra,%20me%20gustaría%20reservar%20mi%20primera%20cita"
-            target="_blank" 
+            target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center px-8 py-3 bg-green-500 text-white font-semibold rounded-full hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             <WhatsApp class="w-5 h-5 mr-2" />
             Reservar por WhatsApp
           </a>
-          <a 
+          <a
             href="tel:614417513"
             class="inline-flex items-center px-8 py-3 border-2 border-purple-600 text-purple-600 font-semibold rounded-full hover:bg-purple-600 hover:text-white transition-all duration-300"
           >
@@ -205,9 +205,9 @@ const pricingPlans = [
         <p class="text-gray-600 mb-6">
           Cada caso es único. Contacta conmigo para una valoración personalizada y un plan de tratamiento adaptado a tus necesidades específicas.
         </p>
-        <a 
+        <a
           href="https://wa.me/34614417513?text=Hola%20Alexandra,%20me%20gustaría%20más%20información%20sobre%20los%20precios%20y%20servicios"
-          target="_blank" 
+          target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
         >
