@@ -133,10 +133,11 @@ const therapies: Therapy[] = [
                   
                   {!hasSubcategories && (
                     <div class="mt-6">
-                      <a 
+                      <a
                         href={`https://wa.me/34614417513?text=Hola%20Alexandra,%20me%20interesa%20la%20${encodeURIComponent(therapy.title)}`}
-                        target="_blank" 
+                        target="_blank"
                         rel="noopener noreferrer"
+                        data-umami-event={`whatsapp-service-${therapy.title.toLowerCase().replace(/\s+/g, '-')}`}
                         class="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium transition-colors"
                       >
                         Consultar terapia
@@ -168,10 +169,11 @@ const therapies: Therapy[] = [
                             </li>
                           ))}
                         </ul>
-                        <a 
+                        <a
                           href={`https://wa.me/34614417513?text=Hola%20Alexandra,%20me%20interesa%20la%20${encodeURIComponent(therapy.title)}%20-%20${encodeURIComponent(subcategory.title)}`}
-                          target="_blank" 
+                          target="_blank"
                           rel="noopener noreferrer"
+                          data-umami-event={`whatsapp-service-${subcategory.title.toLowerCase().replace(/\s+/g, '-')}`}
                           class="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium transition-colors text-sm"
                         >
                           Consultar

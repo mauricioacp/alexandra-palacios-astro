@@ -41,13 +41,13 @@ import WhatsApp from './WhatsAppIcon.astro';
         <div class="space-y-3 text-gray-400">
           <div class="flex items-center space-x-2">
             <Phone class="w-4 h-4" />
-            <a href="tel:614417513" class="hover:text-purple-400 transition-colors">
+            <a href="tel:614417513" class="hover:text-purple-400 transition-colors" data-umami-event="phone-footer">
               614 41 75 13
             </a>
           </div>
           <div class="flex items-center space-x-2">
             <Mail class="w-4 h-4" />
-            <a href="mailto:alexandrapz.logopeda@gmail.com" class="hover:text-purple-400 transition-colors">
+            <a href="mailto:alexandrapz.logopeda@gmail.com" class="hover:text-purple-400 transition-colors" data-umami-event="email-footer">
               alexandrapz.logopeda@gmail.com
             </a>
           </div>
@@ -89,11 +89,12 @@ import WhatsApp from './WhatsAppIcon.astro';
 
     <!-- Floating WhatsApp Button -->
     <div class="fixed bottom-6 right-6 z-50">
-      <a 
+      <a
         href="https://wa.me/34614417513?text=Hola%20Alexandra,%20me%20gustaría%20reservar%20una%20consulta"
-        target="_blank" 
+        target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp"
+        data-umami-event="whatsapp-floating"
       >
         <WhatsApp class="w-8 h-8 text-white" />
       </a>

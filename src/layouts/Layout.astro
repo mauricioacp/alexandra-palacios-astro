@@ -65,11 +65,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.site)} />
 
-    <!-- Structured Data -->
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="g13FTWS_bpUn62bJtWiqKycCZl3FaVeKcpTpUI5AfF0" />
+
+    <!-- Preconnect hints for faster loading -->
+    <link rel="preconnect" href="https://umami-mc.laakademia.app" />
+    <link rel="dns-prefetch" href="https://www.google.com" />
+    <link rel="dns-prefetch" href="https://maps.googleapis.com" />
+
+    <!-- Structured Data: MedicalBusiness -->
     <script type="application/ld+json" is:inline>
       {
         "@context": "https://schema.org",
         "@type": "MedicalBusiness",
+        "@id": "https://alexandrapalacios.com/#business",
         "name": "Alexandra Palacios - Logopeda Especialista",
         "description": "Logopeda especialista en terapia miofuncional y rehabilitación del habla en Segovia. Más de 17 años de experiencia clínica.",
         "url": "https://alexandrapalacios.com",
@@ -86,26 +95,21 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "addressCountry": "ES"
+          "latitude": 40.9429,
+          "longitude": -4.1088
         },
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday"
-            ],
-            "opens": "09:00",
-            "closes": "19:00"
+            "dayOfWeek": ["Thursday", "Friday"],
+            "opens": "09:30",
+            "closes": "14:00"
           },
           {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": "Saturday",
-            "opens": "09:00",
-            "closes": "14:00"
+            "dayOfWeek": ["Thursday", "Friday"],
+            "opens": "16:30",
+            "closes": "20:00"
           }
         ],
         "serviceType": [
@@ -121,9 +125,71 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           "@type": "Place",
           "name": "Segovia, España"
         },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "200",
+          "bestRating": "5"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "María González" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "Alexandra ha sido fundamental en el desarrollo de mi hijo. Su paciencia y profesionalidad han logrado resultados increíbles en solo unos meses."
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Carlos Martín" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "Después de mi accidente cerebrovascular, Alexandra me ayudó a recuperar mi capacidad de hablar. Su método es efectivo y muy humano."
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Ana Rodríguez" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "Como profesional de la voz, necesitaba ayuda especializada. El tratamiento vocal de Alexandra me devolvió la confianza en mi trabajo."
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Luis Fernández" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "La terapia miofuncional ha transformado la alimentación de nuestra hija. Alexandra es una profesional excepcional."
+          }
+        ],
         "sameAs": ["https://wa.me/34614417513"]
       }
     </script>
+
+    <!-- Structured Data: Person -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Alexandra Palacios",
+        "jobTitle": "Logopeda Especialista",
+        "description": "Logopeda con más de 17 años de experiencia clínica, especializada en terapia miofuncional y rehabilitación del habla.",
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Universidad Complutense de Madrid"
+        },
+        "knowsAbout": [
+          "Logopedia",
+          "Terapia Miofuncional",
+          "Rehabilitación del Habla",
+          "Disfagia",
+          "Deglución Infantil",
+          "Entrenamiento Vocal",
+          "Programación Neurolingüística (PNL)"
+        ],
+        "worksFor": {
+          "@type": "MedicalBusiness",
+          "@id": "https://alexandrapalacios.com/#business"
+        },
+        "url": "https://alexandrapalacios.com"
+      }
+    </script>
+
     <script defer src="https://umami-mc.laakademia.app/script.js" data-website-id="9c1b4fb8-fd7f-4369-a58c-227fc5049eed"></script>
   </head>
   <body class="min-h-screen bg-white">

@@ -29,7 +29,7 @@ import WhatsApp from './WhatsAppIcon.astro';
               </div>
               <div>
                 <h4 class="font-semibold text-gray-900">Teléfono</h4>
-                <a href="tel:614417513" class="text-purple-600 hover:text-purple-700 transition-colors">
+                <a href="tel:614417513" class="text-purple-600 hover:text-purple-700 transition-colors" data-umami-event="phone-contact">
                   614 41 75 13
                 </a>
               </div>
@@ -41,7 +41,7 @@ import WhatsApp from './WhatsAppIcon.astro';
               </div>
               <div>
                 <h4 class="font-semibold text-gray-900">Email</h4>
-                <a href="mailto:alexandrapz.logopeda@gmail.com" class="text-blue-600 hover:text-blue-700 transition-colors">
+                <a href="mailto:alexandrapz.logopeda@gmail.com" class="text-blue-600 hover:text-blue-700 transition-colors" data-umami-event="email-contact">
                   alexandrapz.logopeda@gmail.com
                 </a>
               </div>
@@ -88,19 +88,21 @@ import WhatsApp from './WhatsAppIcon.astro';
             </p>
             
             <div class="space-y-4">
-              <a 
+              <a
                 href="https://wa.me/34614417513?text=Hola%20Alexandra,%20me%20gustaría%20reservar%20una%20consulta"
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
+                data-umami-event="whatsapp-contact-reservar"
                 class="block w-full bg-green-500 text-white px-8 py-4 rounded-full hover:bg-green-600 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Reservar Consulta
               </a>
               
-              <a 
+              <a
                 href="https://wa.me/34614417513?text=Hola%20Alexandra,%20tengo%20algunas%20preguntas%20sobre%20tus%20servicios"
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
+                data-umami-event="whatsapp-contact-consulta"
                 class="block w-full border-2 border-green-500 text-green-600 px-8 py-4 rounded-full hover:bg-green-500 hover:text-white transition-all duration-300 font-semibold"
               >
                 Hacer Consulta
