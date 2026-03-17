@@ -1,0 +1,34 @@
+---
+const reviewUrl = "https://g.page/r/CceQJGLbaKUMEAE/review";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content={`3;url=${reviewUrl}`} />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Deja tu opinión - Alexandra Palacios Logopeda</title>
+    <style>
+      body { font-family: system-ui, sans-serif; margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f3e8ff 0%, #fff 50%, #eff6ff 100%); }
+      .container { text-align: center; max-width: 28rem; padding: 2rem; }
+      .star { font-size: 4rem; margin-bottom: 1.5rem; }
+      h1 { font-size: 1.875rem; font-weight: 700; color: #111827; margin-bottom: 1rem; }
+      p { font-size: 1.125rem; color: #4b5563; margin-bottom: 2rem; }
+      a { display: inline-block; padding: 0.75rem 2rem; background: linear-gradient(to right, #9333ea, #2563eb); color: #fff; font-weight: 600; border-radius: 9999px; text-decoration: none; }
+      a:hover { opacity: 0.9; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="star">⭐</div>
+      <h1>¡Gracias por tu confianza!</h1>
+      <p>Te estamos redirigiendo a Google para que dejes tu valoración...</p>
+      <a href={reviewUrl}>Ir a Google Reviews</a>
+    </div>
+    <script is:inline define:vars={{ reviewUrl }}>
+      setTimeout(function() { window.location.href = reviewUrl; }, 3000);
+    </script>
+  </body>
+</html>

@@ -10,6 +10,7 @@ interface Subcategory {
 interface Therapy {
   icon: any;
   title: string;
+  slug: string;
   description: string;
   features?: string[];
   subcategories?: Subcategory[];
@@ -19,6 +20,7 @@ const therapies: Therapy[] = [
   {
     icon: Utensils,
     title: "Terapia Miofuncional",
+    slug: "terapia-miofuncional",
     description: "Especialidad en la reeducación de la musculatura orofacial para mejorar funciones como masticación y deglución.",
     subcategories: [
       {
@@ -36,12 +38,14 @@ const therapies: Therapy[] = [
   {
     icon: Mic,
     title: "Terapia Vocal",
+    slug: "terapia-vocal",
     description: "Entrenamiento diseñado para dar herramientas aplicadas en el día a día para profesionales de la voz o personas con alteraciones vocales causadas por una lesión o por problemas funcionales.",
     features: []
   },
   {
     icon: Mic,
     title: "Terapia en la Articulación",
+    slug: "terapia-articulacion",
     description: "Tratamientos especializados para mejorar la articulación y el habla.",
     subcategories: [
       {
@@ -59,12 +63,14 @@ const therapies: Therapy[] = [
   {
     icon: Smile,
     title: "Terapia en Parálisis Facial",
+    slug: "paralisis-facial",
     description: "Tratamiento para la recuperación de la movilidad y funcionalidad de la musculatura orofacial.",
     features: []
   },
   {
     icon: Brain,
     title: "Terapia Neurológica",
+    slug: "terapia-neurologica",
     description: "Tratamiento de recuperación del lenguaje y articulación para personas que presenten afasia o disartria tras ictus y/o enfermedad neurológica.",
     features: ["Evaluación inicial", "Entrenamiento del lenguaje", "Estimulación oral", "Opción de grupos reducidos"]
   }
@@ -116,9 +122,18 @@ const therapies: Therapy[] = [
                     )}
                   </div>
                   
-                  <p class="text-gray-600 mb-6 leading-relaxed">
+                  <p class="text-gray-600 mb-4 leading-relaxed">
                     {therapy.description}
                   </p>
+                  <a
+                    href={`/${therapy.slug}`}
+                    class="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium transition-colors mb-4"
+                  >
+                    Saber más sobre esta terapia
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
                   
                   {therapy.features && (
                     <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-6">
