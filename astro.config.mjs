@@ -7,6 +7,10 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   output: 'static',
   site: 'https://alexandrapalacios.com',
+  redirects: {
+    '/deglucion-infantil': '/terapia-miofuncional',
+    '/disfagia-adultos': '/terapia-miofuncional',
+  },
   integrations: [sitemap({
     changefreq: 'weekly',
     priority: 1.0,

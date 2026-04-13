@@ -3,18 +3,18 @@ import { Heart, Phone, Mail, MapPin } from 'lucide-astro';
 import WhatsApp from './WhatsAppIcon.astro';
 ---
 
-<footer class="bg-gray-900 text-white py-16">
+<footer class="bg-gray-900 dark:bg-slate-950 text-white py-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
       <!-- Brand -->
       <div class="space-y-4">
         <div class="flex items-center space-x-2">
-          <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
+          <div class="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center">
             <span class="text-white font-bold text-lg">AP</span>
           </div>
           <div>
             <h3 class="text-xl font-bold">Alexandra Palacios</h3>
-            <p class="text-purple-400">Logopeda Especialista</p>
+            <p class="text-primary-400">Logopeda Especialista</p>
           </div>
         </div>
         <p class="text-gray-400 leading-relaxed">
@@ -26,11 +26,9 @@ import WhatsApp from './WhatsAppIcon.astro';
       <div>
         <h4 class="text-lg font-semibold mb-4">Servicios</h4>
         <ul class="space-y-2 text-gray-400">
-          <li>Deglución Infantil</li>
-          <li>Disfagia Adulta</li>
+          <li>Terapia Miofuncional</li>
           <li>Articulación y Fonética</li>
           <li>Entrenamiento Vocal</li>
-          <li>Terapia Miofuncional</li>
           <li>Rehabilitación Facial</li>
         </ul>
       </div>
@@ -41,13 +39,13 @@ import WhatsApp from './WhatsAppIcon.astro';
         <div class="space-y-3 text-gray-400">
           <div class="flex items-center space-x-2">
             <Phone class="w-4 h-4" />
-            <a href="tel:614417513" class="hover:text-purple-400 transition-colors">
+            <a href="tel:614417513" class="hover:text-primary-400 transition-colors" data-umami-event="phone-footer">
               614 41 75 13
             </a>
           </div>
           <div class="flex items-center space-x-2">
             <Mail class="w-4 h-4" />
-            <a href="mailto:alexandrapz.logopeda@gmail.com" class="hover:text-purple-400 transition-colors">
+            <a href="mailto:alexandrapz.logopeda@gmail.com" class="hover:text-primary-400 transition-colors" data-umami-event="email-footer">
               alexandrapz.logopeda@gmail.com
             </a>
           </div>
@@ -63,11 +61,14 @@ import WhatsApp from './WhatsAppIcon.astro';
         <h4 class="text-lg font-semibold mb-4">Horarios</h4>
         <div class="space-y-2 text-gray-400">
           <div>
-            <span class="font-medium">Jueves - Viernes</span>
+            <span class="font-medium">Lunes y Jueves</span>
             <br />
-            <span>9:30 - 14:00</span>
+            <span>9:30 - 20:30</span>
+          </div>
+          <div>
+            <span class="font-medium">Viernes</span>
             <br />
-            <span>16:30 - 20:00</span>
+            <span>10:00 - 14:00</span>
           </div>
         </div>
       </div>
@@ -78,22 +79,27 @@ import WhatsApp from './WhatsAppIcon.astro';
         <div class="flex items-center space-x-2 text-gray-400">
           <span>© 2025 Alexandra Palacios. Todos los derechos reservados.</span>
         </div>
-        
-        <div class="flex items-center space-x-2 text-gray-400">
-          <span>Hecho con</span>
-          <Heart class="w-4 h-4 text-red-500 fill-current" />
-          <span>en Segovia</span>
+
+        <div class="flex items-center space-x-4 text-gray-400">
+          <a href="/opinion" class="hover:text-primary-400 transition-colors">Deja tu opinión</a>
+          <span class="flex items-center space-x-2">
+            <span>Hecho con</span>
+            <Heart class="w-4 h-4 text-red-500 fill-current" />
+            <span>en Segovia</span>
+          </span>
         </div>
       </div>
     </div>
 
     <!-- Floating WhatsApp Button -->
     <div class="fixed bottom-6 right-6 z-50">
-      <a 
+      <a
         href="https://wa.me/34614417513?text=Hola%20Alexandra,%20me%20gustaría%20reservar%20una%20consulta"
-        target="_blank" 
+        target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp"
+        data-umami-event="whatsapp-floating"
+        class="animate-fade-in animate-duration-700"
       >
         <WhatsApp class="w-8 h-8 text-white" />
       </a>
