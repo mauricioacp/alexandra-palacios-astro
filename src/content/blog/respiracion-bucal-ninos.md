@@ -3,7 +3,7 @@ title: "Respiración bucal en niños: causas y solución"
 description: "La respiración bucal en niños afecta al desarrollo facial, el sueño y la alimentación. Aprende a detectarla y conoce el tratamiento logopédico."
 date: 2026-01-27
 category: "Infantil"
-relatedServices: ["deglucion-infantil", "terapia-miofuncional"]
+relatedServices: ["terapia-miofuncional", "terapia-articulacion"]
 ---
 
 ## Tu hijo respira por la boca: ¿es un problema?

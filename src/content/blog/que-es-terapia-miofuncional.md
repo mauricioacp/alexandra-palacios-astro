@@ -3,7 +3,7 @@ title: "¿Qué es la terapia miofuncional y para qué sirve?"
 description: "Descubre qué es la terapia miofuncional, en qué consiste, qué problemas trata y cómo puede mejorar la deglución, la respiración y el habla de niños y adultos."
 date: 2026-03-10
 category: "Tratamientos"
-relatedServices: ["terapia-miofuncional", "deglucion-infantil"]
+relatedServices: ["terapia-miofuncional", "terapia-articulacion"]
 ---
 
 ## ¿Qué es la terapia miofuncional?

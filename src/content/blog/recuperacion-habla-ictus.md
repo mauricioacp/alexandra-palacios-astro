@@ -3,7 +3,7 @@ title: "Recuperación del habla después de un ictus"
 description: "Guía sobre la rehabilitación del habla y el lenguaje tras un accidente cerebrovascular. Qué esperar del proceso, tipos de afasia y cómo ayuda la logopedia."
 date: 2026-02-03
 category: "Neurología"
-relatedServices: ["terapia-neurologica", "disfagia-adultos"]
+relatedServices: ["terapia-neurologica", "terapia-miofuncional"]
 ---
 
 ## Cuando las palabras desaparecen

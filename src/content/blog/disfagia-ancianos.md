@@ -3,7 +3,7 @@ title: "Disfagia en ancianos: síntomas y tratamiento"
 description: "La disfagia en personas mayores es más común de lo que se piensa. Aprende a reconocer sus síntomas, sus causas y cómo tratarla con logopedia."
 date: 2026-02-24
 category: "Adultos"
-relatedServices: ["disfagia-adultos", "terapia-neurologica"]
+relatedServices: ["terapia-miofuncional", "terapia-neurologica"]
 ---
 
 ## ¿Qué es la disfagia en ancianos?

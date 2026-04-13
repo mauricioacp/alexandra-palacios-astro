@@ -22,11 +22,11 @@ export interface Service {
 export const services: Service[] = [
   {
     slug: "terapia-miofuncional",
-    title: "Terapia Miofuncional",
-    metaTitle: "Terapia Miofuncional en Segovia | Alexandra Palacios Logopeda",
-    metaDescription: "Especialista en terapia miofuncional en Segovia. Reeducación de la musculatura orofacial para mejorar masticación, deglución y respiración. +17 años de experiencia.",
+    title: "Terapia Miofuncional: Deglución Infantil y Disfagia en Adultos",
+    metaTitle: "Terapia Miofuncional en Segovia | Deglución y Disfagia | Alexandra Palacios",
+    metaDescription: "Especialista en terapia miofuncional en Segovia. Tratamiento de deglución infantil, aversión alimentaria y disfagia en adultos. +17 años de experiencia.",
     icon: "Utensils",
-    shortDescription: "Especialidad en la reeducación de la musculatura orofacial para mejorar funciones como masticación y deglución.",
+    shortDescription: "Especialidad en la reeducación de la musculatura orofacial, tratamiento de deglución infantil y disfagia en adultos.",
     fullDescription: `
       <h2>¿Qué es la terapia miofuncional?</h2>
       <p>La terapia miofuncional es mi especialidad principal y una de las áreas en las que he dedicado más años de formación y práctica clínica. Se trata de un conjunto de técnicas y ejercicios dirigidos a rehabilitar la musculatura orofacial — los músculos de la cara, la lengua, los labios y la mandíbula — que intervienen en funciones esenciales como la respiración, la masticación, la deglución y el habla.</p>
@@ -36,6 +36,17 @@ export const services: Service[] = [
       <p>Con más de 17 años de experiencia en logopedia clínica, he desarrollado un enfoque personalizado que combina la evaluación minuciosa de cada caso con un plan de intervención adaptado a las necesidades específicas del paciente.</p>
       <p>Trabajo tanto con adultos como con niños. En el caso de los adultos, las alteraciones miofuncionales suelen estar asociadas a problemas de deglución (disfagia), parálisis facial o intervenciones quirúrgicas en la zona oral. En los niños, lo más frecuente es la deglución atípica, la respiración bucal y la aversión a ciertos alimentos.</p>
       <p>Cada sesión dura 40 minutos e incluyo ejercicios específicos que el paciente puede practicar en casa para acelerar los resultados. El compromiso del paciente con el trabajo diario es fundamental para el éxito del tratamiento.</p>
+
+      <h2>Disfagia en adultos</h2>
+      <p>La disfagia es la dificultad para tragar alimentos, líquidos o incluso la propia saliva. Es una condición que afecta significativamente a la calidad de vida del paciente y que, en casos graves, puede provocar desnutrición, deshidratación o neumonías por aspiración.</p>
+      <p>En mi consulta de Segovia atiendo a pacientes adultos con disfagia derivada de diferentes causas: accidentes cerebrovasculares (ictus), enfermedades neurológicas como Parkinson, ELA o esclerosis múltiple, procesos oncológicos de cabeza y cuello, y también el deterioro asociado al envejecimiento.</p>
+      <p>El tratamiento de la disfagia requiere un trabajo diario, minucioso y específico. Mi método se basa en tres pilares fundamentales: el aprendizaje y automatización de pautas seguras de alimentación, el entrenamiento de posturas compensatorias que favorecen la deglución y la realización de ejercicios específicos para tonificar la musculatura oral.</p>
+      <p>La primera sesión dedicada a la evaluación de la disfagia es más extensa que una sesión habitual. Realizo una valoración completa que incluye la observación directa de la deglución con diferentes texturas y volúmenes, la evaluación de la musculatura oral, el análisis de los reflejos de protección y la revisión del historial médico del paciente.</p>
+
+      <h2>Deglución infantil y aversión alimentaria</h2>
+      <p>La deglución atípica infantil es una de las consultas más frecuentes que recibo. Se produce cuando el niño coloca la lengua de forma incorrecta al tragar y en reposo, lo que puede provocar problemas dentales, dificultades en la alimentación y alteraciones en el desarrollo del habla.</p>
+      <p>La aversión a los alimentos es un problema más frecuente de lo que se piensa. No se trata simplemente de un niño caprichoso con la comida: hay una base sensorial y muscular que dificulta la aceptación de nuevos alimentos, texturas o sabores. Mi trabajo consiste en enseñar al niño nuevos hábitos para comer todo tipo de alimentos y disfrutarlos, utilizando técnicas lúdicas adaptadas a su edad.</p>
+      <p>Trato a niños respiradores orales que necesitan aprender a respirar por la nariz, niños con deglución atípica que presentan malformaciones dentarias por la mala posición lingual, niños con fisura labio-palatina que requieren un abordaje especializado y niños con aversión a diferentes alimentos.</p>
 
       <h2>¿Qué problemas trata la terapia miofuncional?</h2>
       <p>Esta terapia aborda un amplio rango de alteraciones que afectan a la musculatura de la cara y la boca. Los problemas más frecuentes que trato en mi consulta de Segovia incluyen trastornos de la deglución en adultos y niños, alteraciones respiratorias como la respiración bucal habitual, desequilibrios musculares que afectan a la posición de los dientes y la mandíbula, y dificultades en la masticación y la alimentación.</p>
@@ -49,13 +60,22 @@ export const services: Service[] = [
       "Ronquidos o apnea del sueño",
       "Maloclusión dental o deformación del paladar",
       "Babeo excesivo en niños mayores de 2 años",
-      "Rechazo a ciertos alimentos o texturas"
+      "Rechazo a ciertos alimentos o texturas",
+      "Tos o atragantamiento frecuente al comer o beber",
+      "Sensación de que la comida se queda atascada en la garganta",
+      "Cambios en la voz después de tragar (voz húmeda)",
+      "Neumonías recurrentes",
+      "Arcadas o vómitos al probar nuevos alimentos",
+      "Fisura labio-palatina diagnosticada"
     ],
     treatmentProcess: [
       "Evaluación inicial completa de la musculatura orofacial y las funciones orales",
+      "Evaluación especializada de la deglución con diferentes texturas y volúmenes",
       "Diagnóstico personalizado y explicación detallada al paciente o familia",
       "Diseño del plan de intervención con objetivos específicos y medibles",
       "Sesiones semanales de 40 minutos con ejercicios progresivos",
+      "Enseñanza de posturas compensatorias para deglutir de forma segura",
+      "Adaptación gradual de la dieta si es necesario",
       "Pautas y ejercicios para practicar en casa entre sesiones",
       "Revisiones periódicas para ajustar el tratamiento según la evolución"
     ],
@@ -64,6 +84,10 @@ export const services: Service[] = [
       "Corrección de la respiración bucal",
       "Fortalecimiento de la musculatura orofacial",
       "Mejora de la postura lingual en reposo",
+      "Alimentación más segura y sin riesgo de aspiración",
+      "Recuperación progresiva de texturas y volúmenes de alimentos",
+      "Aceptación progresiva de nuevos alimentos en niños",
+      "Mejora del desarrollo dental y maxilar",
       "Apoyo al tratamiento ortodóncico",
       "Mayor calidad de vida y bienestar"
     ],
@@ -81,62 +105,6 @@ export const services: Service[] = [
         answer: "No, trabajo con pacientes de todas las edades. En adultos es especialmente útil tras un ictus, cirugías orales, parálisis facial o cuando hay problemas de deglución asociados a enfermedades neurológicas."
       },
       {
-        question: "¿Se notan los resultados desde el principio?",
-        answer: "Los primeros cambios suelen notarse a partir de las 3-4 primeras sesiones, siempre que el paciente sea constante con los ejercicios en casa. La mejoría es gradual y progresiva."
-      }
-    ],
-    relatedServices: ["disfagia-adultos", "deglucion-infantil", "paralisis-facial"],
-    priceReference: "Desde 40€/sesión"
-  },
-
-  {
-    slug: "disfagia-adultos",
-    title: "Tratamiento de Disfagia en Adultos",
-    metaTitle: "Tratamiento Disfagia Adultos en Segovia | Alexandra Palacios",
-    metaDescription: "Tratamiento especializado de disfagia en adultos en Segovia. Rehabilitación de la deglución tras ictus, enfermedades neurológicas y oncológicas. Evaluación completa.",
-    icon: "Utensils",
-    shortDescription: "Terapia específica en la deglución de adultos especialmente tras accidentes cerebrovasculares, enfermedades oncológicas y/o neurológicas.",
-    fullDescription: `
-      <h2>¿Qué es la disfagia?</h2>
-      <p>La disfagia es la dificultad para tragar alimentos, líquidos o incluso la propia saliva. Es una condición que afecta significativamente a la calidad de vida del paciente y que, en casos graves, puede provocar desnutrición, deshidratación o neumonías por aspiración.</p>
-      <p>En mi consulta de Segovia atiendo a pacientes adultos con disfagia derivada de diferentes causas: accidentes cerebrovasculares (ictus), enfermedades neurológicas como Parkinson, ELA o esclerosis múltiple, procesos oncológicos de cabeza y cuello, y también el deterioro asociado al envejecimiento.</p>
-
-      <h2>Mi abordaje de la disfagia</h2>
-      <p>El tratamiento de la disfagia requiere un trabajo diario, minucioso y específico. Mi método se basa en tres pilares fundamentales: el aprendizaje y automatización de pautas seguras de alimentación, el entrenamiento de posturas compensatorias que favorecen la deglución y la realización de ejercicios específicos para tonificar la musculatura oral.</p>
-      <p>El objetivo es progresivo: partimos de la situación actual del paciente y trabajamos paso a paso hasta conseguir una dieta lo más normalizada posible, con todos los volúmenes y texturas de alimentos. Cada caso es diferente, y por eso la evaluación inicial es tan importante para diseñar un plan de tratamiento realista y efectivo.</p>
-
-      <h2>La evaluación inicial</h2>
-      <p>La primera sesión dedicada a la evaluación de la disfagia es más extensa que una sesión habitual. Realizo una valoración completa que incluye la observación directa de la deglución con diferentes texturas y volúmenes, la evaluación de la musculatura oral, el análisis de los reflejos de protección y la revisión del historial médico del paciente.</p>
-      <p>Con toda esta información, diseño un plan de intervención personalizado que incluye la adaptación de la dieta si es necesario, los ejercicios específicos a realizar y las pautas de seguridad para la alimentación.</p>
-    `,
-    symptoms: [
-      "Tos o atragantamiento frecuente al comer o beber",
-      "Sensación de que la comida se queda atascada en la garganta",
-      "Cambios en la voz después de tragar (voz húmeda)",
-      "Pérdida de peso involuntaria",
-      "Neumonías recurrentes",
-      "Babeo o escape de alimento por la boca",
-      "Necesidad de tragar varias veces para pasar el alimento",
-      "Rechazo a comer o miedo a atragantarse"
-    ],
-    treatmentProcess: [
-      "Evaluación especializada de la deglución con diferentes texturas y volúmenes",
-      "Análisis de la musculatura oral y los reflejos de protección",
-      "Adaptación de la dieta según el grado de disfagia",
-      "Enseñanza de posturas compensatorias para deglutir de forma segura",
-      "Ejercicios específicos para fortalecer la musculatura implicada en la deglución",
-      "Seguimiento y ajuste progresivo hacia una dieta normalizada"
-    ],
-    benefits: [
-      "Alimentación más segura y sin riesgo de aspiración",
-      "Recuperación progresiva de texturas y volúmenes de alimentos",
-      "Mayor autonomía en la alimentación",
-      "Prevención de neumonías por aspiración",
-      "Mejora del estado nutricional y la hidratación",
-      "Mayor calidad de vida y confianza al comer"
-    ],
-    faq: [
-      {
         question: "¿Cómo se trata la disfagia en adultos?",
         answer: "La disfagia se trabaja con un trabajo diario de aprendizaje y automatización de pautas de alimentación seguras, posturas compensatorias para favorecer la deglución y ejercicios específicos para tonificar la musculatura oral."
       },
@@ -148,61 +116,6 @@ export const services: Service[] = [
         question: "¿Se puede curar la disfagia?",
         answer: "Depende de la causa. En muchos casos, como tras un ictus, es posible recuperar total o parcialmente la función deglutoria. En enfermedades degenerativas, el objetivo es mantener la mejor función posible y garantizar una alimentación segura."
       },
-      {
-        question: "¿Necesito derivación médica para tratarme de disfagia?",
-        answer: "Aunque no es imprescindible, es recomendable disponer de informes médicos previos. En algunos casos puedo solicitar pruebas complementarias si lo considero necesario para la mejor recuperación."
-      }
-    ],
-    relatedServices: ["terapia-miofuncional", "terapia-neurologica", "deglucion-infantil"],
-    priceReference: "Evaluación: 60€ | Sesiones: desde 40€"
-  },
-
-  {
-    slug: "deglucion-infantil",
-    title: "Deglución Infantil y Aversión Alimentaria",
-    metaTitle: "Deglución Infantil y Aversión Alimentaria | Logopeda Segovia",
-    metaDescription: "Tratamiento de deglución atípica y aversión alimentaria en niños en Segovia. Especialista en respiración bucal, fisura labiopalatina y hábitos alimentarios.",
-    icon: "Utensils",
-    shortDescription: "Especialidad en niños con mala colocación lingual al tragar y en reposo, mejorando la alimentación y el desarrollo oral.",
-    fullDescription: `
-      <h2>Deglución atípica y problemas de alimentación en niños</h2>
-      <p>La deglución atípica infantil es una de las consultas más frecuentes que recibo en mi consulta. Se produce cuando el niño coloca la lengua de forma incorrecta al tragar y en reposo, lo que puede provocar problemas dentales, dificultades en la alimentación y alteraciones en el desarrollo del habla.</p>
-      <p>Muchos padres llegan a mi consulta preocupados porque su hijo tiene dificultades para comer ciertos alimentos, rechaza texturas nuevas, respira habitualmente por la boca o tiene problemas de articulación. Detrás de estos síntomas suele haber un desequilibrio en la musculatura orofacial que necesita ser tratado.</p>
-
-      <h2>La aversión alimentaria infantil</h2>
-      <p>La aversión a los alimentos es un problema más frecuente de lo que se piensa. No se trata simplemente de un niño caprichoso con la comida: hay una base sensorial y muscular que dificulta la aceptación de nuevos alimentos, texturas o sabores. Mi trabajo consiste en enseñar al niño nuevos hábitos para comer todo tipo de alimentos y disfrutarlos, utilizando técnicas lúdicas adaptadas a su edad.</p>
-
-      <h2>Patologías que trato en niños</h2>
-      <p>Mi experiencia de más de 17 años me ha permitido trabajar con una gran variedad de alteraciones infantiles relacionadas con la deglución y la alimentación. Trato a niños respiradores orales que necesitan aprender a respirar por la nariz, niños con deglución atípica que presentan malformaciones dentarias por la mala posición lingual, niños con fisura labio-palatina que requieren un abordaje especializado y niños con aversión a diferentes alimentos.</p>
-      <p>En todos los casos, realizo una evaluación completa y diseño un plan de tratamiento con ejercicios específicos adaptados a la edad del niño, utilizando técnicas lúdicas para mantener su motivación. La adaptación de la dieta, cuando es necesaria, se hace de forma gradual y siempre en coordinación con la familia.</p>
-    `,
-    symptoms: [
-      "El niño respira habitualmente por la boca",
-      "Coloca la lengua entre los dientes al tragar o en reposo",
-      "Rechaza alimentos nuevos o ciertas texturas de forma habitual",
-      "Tiene dificultades para masticar alimentos sólidos",
-      "Babea con frecuencia para su edad",
-      "Presenta malformaciones dentarias o paladar ojival",
-      "Tiene arcadas o vómitos al probar nuevos alimentos",
-      "Le diagnosticaron fisura labio-palatina"
-    ],
-    treatmentProcess: [
-      "Evaluación completa de la deglución, respiración y musculatura orofacial del niño",
-      "Conversación detallada con los padres sobre hábitos alimentarios y preocupaciones",
-      "Diseño de un plan de tratamiento con objetivos adaptados a la edad del niño",
-      "Sesiones semanales de 40 minutos con técnicas lúdicas y motivadoras",
-      "Adaptación gradual de la dieta si es necesario",
-      "Pautas para la familia para trabajar en casa entre sesiones"
-    ],
-    benefits: [
-      "Corrección de la posición lingual en reposo y al tragar",
-      "Transición de respiración bucal a respiración nasal",
-      "Aceptación progresiva de nuevos alimentos y texturas",
-      "Mejora del desarrollo dental y maxilar",
-      "Mayor autonomía en la alimentación",
-      "Refuerzo positivo de la relación del niño con la comida"
-    ],
-    faq: [
       {
         question: "¿En qué consiste el tratamiento de deglución atípica?",
         answer: "Consiste en el aprendizaje y automatización de la colocación correcta de la lengua en reposo y al deglutir todo tipo de sólidos y líquidos. Se trabaja con ejercicios específicos adaptados a la edad del niño."
@@ -216,12 +129,12 @@ export const services: Service[] = [
         answer: "La aversión alimentaria tiene una base sensorial y muscular. Si tu hijo rechaza sistemáticamente ciertas texturas, tiene arcadas con alimentos nuevos o solo acepta una gama muy limitada de comida, es recomendable una valoración logopédica."
       },
       {
-        question: "¿Los padres participan en las sesiones?",
-        answer: "Sí, la participación de la familia es fundamental. Doy pautas y ejercicios para practicar en casa. El éxito del tratamiento depende en gran parte del trabajo diario que se hace fuera de la consulta."
+        question: "¿Se notan los resultados desde el principio?",
+        answer: "Los primeros cambios suelen notarse a partir de las 3-4 primeras sesiones, siempre que el paciente sea constante con los ejercicios en casa. La mejoría es gradual y progresiva."
       }
     ],
-    relatedServices: ["terapia-miofuncional", "disfagia-adultos", "terapia-articulacion"],
-    priceReference: "Desde 40€/sesión"
+    relatedServices: ["paralisis-facial", "terapia-neurologica", "terapia-articulacion"],
+    priceReference: "Evaluación: 60€ | Sesiones: desde 40€/sesión"
   },
 
   {
@@ -342,7 +255,7 @@ export const services: Service[] = [
         answer: "Aunque es especialmente útil para profesionales de la voz, cualquier persona que quiera mejorar su forma de hablar puede beneficiarse. Si sientes que tu articulación no es clara o que te cuesta expresarte con fluidez, puedo ayudarte."
       }
     ],
-    relatedServices: ["terapia-vocal", "terapia-miofuncional", "deglucion-infantil"],
+    relatedServices: ["terapia-vocal", "terapia-miofuncional", "paralisis-facial"],
     priceReference: "Desde 40€/sesión"
   },
 
@@ -402,7 +315,7 @@ export const services: Service[] = [
         answer: "Sí, la debilidad de los músculos de la boca y la cara puede dificultar la masticación y la deglución. Es una de las áreas que trabajo en la rehabilitación, junto con la movilidad facial y la articulación."
       }
     ],
-    relatedServices: ["terapia-miofuncional", "terapia-neurologica", "disfagia-adultos"],
+    relatedServices: ["terapia-miofuncional", "terapia-neurologica", "terapia-vocal"],
     priceReference: "Desde 40€/sesión"
   },
 
@@ -468,7 +381,7 @@ export const services: Service[] = [
         answer: "En muchos casos sí, con un tratamiento adecuado y constante. La recuperación depende de la gravedad del daño, la zona afectada y la dedicación al tratamiento. Cuanto antes se empiece la rehabilitación, mejores son los resultados."
       }
     ],
-    relatedServices: ["disfagia-adultos", "paralisis-facial", "terapia-miofuncional"],
+    relatedServices: ["terapia-miofuncional", "paralisis-facial", "terapia-articulacion"],
     priceReference: "Valoración: 100€ | Individual: desde 40€ | Grupal: 35€/persona"
   }
 ];

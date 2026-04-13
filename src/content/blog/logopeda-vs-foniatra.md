@@ -26,7 +26,7 @@ Tras el grado, muchos logopedas nos especializamos a través de másteres y form
 
 El campo de acción del logopeda es amplio:
 
-- **Trastornos del habla**: dislalias (errores de pronunciación), disglosia, disartria, tartamudez, apraxia del habla.
+- **Trastornos del habla**: dislalias (errores de pronunciación), disglosia, disartria, apraxia del habla.
 - **Trastornos del lenguaje**: retraso del lenguaje, trastorno del desarrollo del lenguaje (TDL), afasias.
 - **Trastornos de la voz**: disfonías funcionales y orgánicas, rehabilitación vocal tras cirugía laríngea.
 - **Trastornos de la deglución**: deglución atípica, disfagia en niños y adultos.
@@ -93,7 +93,6 @@ El foniatra explorará tus cuerdas vocales, establecerá un diagnóstico y deter
 - Quieres mejorar tu técnica vocal como profesional de la voz.
 - Tu hijo necesita terapia miofuncional coordinada con ortodoncia.
 - Tienes problemas de disfagia (dificultad para tragar).
-- Tartamudez en niños o adultos.
 
 En la mayoría de problemas que no son específicamente de voz, el logopeda es el profesional de primera línea. No necesitas pasar antes por el foniatra para que tu hijo reciba logopedia por un problema de pronunciación o lenguaje.
 

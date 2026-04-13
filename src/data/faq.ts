@@ -92,13 +92,6 @@ export const faqData: FAQItem[] = [
     answer: "Sí ofrezco sesiones online y presenciales, aunque hay patologías como la disfagia que el trabajo con la comida no se puede realizar online por riesgo de atragantamiento.",
     category: "practico"
   },
-  
-  // Casos Específicos
-  {
-    question: "¿Puede ayudar con problemas de tartamudez en adultos?",
-    answer: "Sí, trabajo con adultos que presentan tartamudez, utilizando técnicas específicas para mejorar la fluidez del habla y reducir la ansiedad asociada.",
-    category: "especifico"
-  },
   {
     question: "¿Trata problemas de voz en profesionales (profesores, cantantes)?",
     answer: "Por supuesto, trabajo con profesionales de la voz para prevenir y tratar patologías vocales, mejorar la técnica vocal y mantener una voz sana.",

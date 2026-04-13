@@ -3,7 +3,7 @@ title: "Deglución atípica en niños: guía completa"
 description: "Todo lo que necesitas saber sobre la deglución atípica infantil: qué es, cómo detectarla, qué consecuencias tiene y cómo se trata con logopedia."
 date: 2026-02-10
 category: "Infantil"
-relatedServices: ["deglucion-infantil", "terapia-miofuncional"]
+relatedServices: ["terapia-miofuncional", "terapia-articulacion"]
 ---
 
 ## ¿Qué es la deglución atípica?

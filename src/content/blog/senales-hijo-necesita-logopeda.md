@@ -3,7 +3,7 @@ title: "Señales de que tu hijo necesita un logopeda"
 description: "¿Cuándo llevar a tu hijo al logopeda? Aprende a identificar las señales de alerta en el habla, la alimentación y la comunicación infantil."
 date: 2026-03-03
 category: "Infantil"
-relatedServices: ["deglucion-infantil", "terapia-articulacion"]
+relatedServices: ["terapia-miofuncional", "terapia-articulacion"]
 ---
 
 ## ¿Cuándo debo preocuparme por el desarrollo de mi hijo?
