@@ -23,7 +23,7 @@ const relatedServiceData = relatedServices
 
 const breadcrumbs = [
   { label: "Inicio", href: "/" },
-  { label: "Blog", href: "/blog" },
+  { label: "Blog", href: "/blog/" },
   { label: title },
 ];
 
@@ -131,7 +131,7 @@ const articleSchema = {
           <div class="grid sm:grid-cols-2 gap-4" data-reveal="animate-fade-in animate-slide-in-from-bottom-4 animate-duration-500">
             {relatedServiceData.map((service) => service && (
               <a
-                href={`/${service.slug}`}
+                href={`/${service.slug}/`}
                 class="bg-white dark:bg-surface-dark-elevated border border-gray-100 dark:border-slate-700 hover:border-primary-200 dark:hover:border-primary-800 rounded-xl p-5 shadow-sm hover:shadow-md transition-all group"
               >
                 <h3 class="font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">

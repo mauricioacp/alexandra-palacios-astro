@@ -41,7 +41,7 @@ const breadcrumbs = [
         <div class="grid md:grid-cols-2 gap-8">
           {posts.map((post) => (
             <a
-              href={`/blog/${post.id.replace(/\.md$/, "")}`}
+              href={`/blog/${post.id.replace(/\.md$/, "")}/`}
               class="group bg-white dark:bg-surface-dark-elevated border border-gray-100 dark:border-slate-700 hover:border-primary-200 dark:hover:border-primary-800 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border-t-2 border-t-primary-200 dark:border-t-primary-800"
               data-reveal="animate-fade-in animate-slide-in-from-bottom-4 animate-duration-500"
             >

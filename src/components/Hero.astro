@@ -1,5 +1,5 @@
 ---
-import { Star, Award, Users, Clock } from 'lucide-astro';
+import { Award, Users, Clock } from 'lucide-astro';
 import { Image } from 'astro:assets';
 import heroImage from '../assets/hero-image-new.jpeg';
 ---
@@ -10,9 +10,12 @@ import heroImage from '../assets/hero-image-new.jpeg';
       <!-- Content -->
       <div class="space-y-8" data-reveal="animate-fade-in animate-slide-in-from-bottom-4 animate-duration-700">
         <div class="space-y-4">
-          <div class="flex items-center space-x-2 text-primary-600 dark:text-primary-400">
-            <Star class="w-5 h-5 fill-current" />
-            <span class="font-medium">Terapia Clínica Oral para estar en equilibrio</span>
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-primary-100 dark:bg-primary-500/10 ring-1 ring-primary-200 dark:ring-primary-500/20 text-primary-700 dark:text-primary-300">
+            <span class="relative flex h-2 w-2" aria-hidden="true">
+              <span class="absolute inline-flex h-full w-full rounded-full bg-primary-500 opacity-75 animate-ping"></span>
+              <span class="relative inline-flex h-2 w-2 rounded-full bg-primary-600 dark:bg-primary-400"></span>
+            </span>
+            <span class="text-sm font-medium tracking-wide">Terapia Clínica Oral para estar en equilibrio</span>
           </div>
           <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
             Transformando la

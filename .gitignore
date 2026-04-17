@@ -28,3 +28,8 @@ pnpm-debug.log*
 
 # test webhook script (contains sensitive URL)
 .github/test-coolify-deploy.sh
+
+# agent tooling (local-only)
+.claude/
+.agents/
+skills-lock.json
